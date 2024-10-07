@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+
+<h1>Welcome to the Galaxy of Star Wars!</h1>
+
+<p>Explore the vast reaches of the Star Wars universe right from your device. Whether you're searching for iconic characters like Luke Skywalker, legendary ships like the Millennium Falcon, or epic films that shaped the galaxy, our databank has you covered.</p>
+
+<ul>
+    <li>
+        <strong>Search the Stars</strong>: Use our search tool to find information on your favorite characters, starships, planets, and films from the Star Wars saga.
+    </li>
+    <li>
+        <strong>Stay Tuned for More</strong>: Soon, we’ll be launching dedicated pages where you can dive deeper into each section with detailed information on your searches!
+    </li>
+</ul>
+
+<form id="myForm" method="get">
+    <label for="category"></label>
+    <select id="category" name="category">
+        <option value="people">Characters</option>
+        <option value="films">Films</option>
+        <option value="starships">Starships</option>
+        <option value="planets">Planets</option>
+        <option value="vehicles">Vehicles</option>
+        <option value="species">Species</option>
+      </select>
+    <label for="idInput">Search:</label>
+    <input type="text" id="idInput" name="id" placeholder="Luke Skywalker..." formaction="/get-data">
+
+    <input id="get" type="submit" value="GET" value="Use the force..">
+</form>
+
+<p>Your journey into the Star Wars universe begins here. May the Force be with you!</p>
