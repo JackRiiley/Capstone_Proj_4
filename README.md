@@ -24,13 +24,17 @@ Welcome to the Star Wars Search Application! This web application makes use of t
 
 ## Installation
 Clone the repository:
-```git clone https://github.com/JackRiiley/Capstone_Proj_4.git```
+```git clone https://github.com/JackRiiley/Capstone_Proj_4.git```  
+
 Navigate to the project directory:
-```cd Capstone_Proj_4```
+```cd Capstone_Proj_4```  
+
 Install the required dependencies:
-```npm i```
+```npm i```  
+
 Start the server:
-```nodemon index.js```
+```nodemon index.js```  
+
 Open your browser and go to http://localhost:3000.
 
 ## Usage
