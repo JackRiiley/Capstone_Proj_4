@@ -31,24 +31,36 @@
 
 <p>Your journey into the Star Wars universe begins here. May the Force be with you!</p>
 
-<h2><%= name %></h2>
+<% if (displayData.length > 0) { %>
+    <% displayData.forEach(function(item) { %>
+        <div>
+            <h2><%= item.name %></h2>
 
-<p><% if (height != "" && mass != "N/A") { %>
-    <strong>Height:</strong> <%= height %>cm
-<% } %></p>
+            <p>
+                <% if (item.height !== "" && item.mass !== "N/A") { %>
+                <strong>Height:</strong> <%= item.height %>cm
+                <% } %>
+            </p>
 
-<p><% if (mass != "" && mass != "N/A") { %>
-    <strong>Mass:</strong> <%= mass %>kg
-<% } %></p>
-<% if (films.length > 0) { %>
-<h3>Films:</h3>
-<ul>
-    <% if (films.length > 0) { %>
-        <% films.forEach(function(film) { %>
-            <li><%= film %></li>
-        <% }) %>
-    <% } else { %>
-        <li>No films found.</li>
-    <% } %>
-</ul>
+            <p>
+                <% if (item.mass !== "" && item.mass !== "N/A") { %>
+                <strong>Mass:</strong> <%= item.mass %>kg
+                <% } %>
+            </p>
+
+            <% if (item.films.length > 0) { %>
+                <h3>Films:</h3>
+                <ul>
+                    <% item.films.forEach(function(film) { %>
+                        <% console.log(film) %>
+                        <li><%= film.title %></li>
+                    <% }) %>
+                </ul>
+            <% } else { %>
+                <p>No films found.</p>
+            <% } %>
+        </div>
+    <% }); %>
+<% } else { %>
+    <p>No results found for your search.</p>
 <% } %>
