@@ -12,10 +12,7 @@ app.use(express.static('public'));
 app.get("/", async (req, res) => {
     // Render the page with an empty name initially
     res.render("index.ejs", { 
-        name: "",
-        height: "",
-        mass: "",
-        films: []    
+        displayData: []  
     });
 });
 
@@ -31,18 +28,16 @@ app.get("/get-data", async (req, res) => {
     console.log("Full URL being requested: ", fullUrl);
     try {
         const result = await axios.get(fullUrl);
-        const data = result.data.results[0]; // Access the first result
-        // Extract more information, and handle cases where data may not be found
-        const displayName = data ? (data.name || data.title) : "No result found";
-        const height = data?.height || "N/A"; // Optional chaining to avoid errors
-        const mass = data?.mass || "N/A"; // Optional chaining to avoid errors
-        const films = data?.films || []; // Default to an empty array if films are not present
+        const data = result.data.results; 
 
+        const displayData = data.map(item => ({
+            name: item.name || item.title || "Unknown",
+            height: item.height || "N/A",
+            mass: item.mass || "N/A",
+            films: item.films || []
+        }))
         res.render("index.ejs", { 
-            name: displayName,
-            height: height,
-            mass: mass,
-            films: films
+            displayData
         });
     } catch (error) {
         res.status(404).send(error.message)
