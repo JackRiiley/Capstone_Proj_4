@@ -13,8 +13,8 @@
     </li>
 </ul>
 
-<form id="myForm" method="get">
-    <label for="category"></label>
+<form id="myForm" method="get" action="/get-data">
+    <label for="category">Category:</label>
     <select id="category" name="category">
         <option value="people">Characters</option>
         <option value="films">Films</option>
@@ -24,9 +24,31 @@
         <option value="species">Species</option>
       </select>
     <label for="idInput">Search:</label>
-    <input type="text" id="idInput" name="id" placeholder="Luke Skywalker..." formaction="/get-data">
+    <input type="text" id="idInput" name="id" placeholder="Luke Skywalker...">
 
-    <input id="get" type="submit" value="GET" value="Use the force..">
+    <input id="get" type="submit" value="Use the force..">
 </form>
 
 <p>Your journey into the Star Wars universe begins here. May the Force be with you!</p>
+
+<h2><%= name %></h2>
+
+<p><% if (height != "" && mass != "N/A") { %>
+    <strong>Height:</strong> <%= height %>cm
+<% } %></p>
+
+<p><% if (mass != "" && mass != "N/A") { %>
+    <strong>Mass:</strong> <%= mass %>kg
+<% } %></p>
+<% if (films.length > 0) { %>
+<h3>Films:</h3>
+<ul>
+    <% if (films.length > 0) { %>
+        <% films.forEach(function(film) { %>
+            <li><%= film %></li>
+        <% }) %>
+    <% } else { %>
+        <li>No films found.</li>
+    <% } %>
+</ul>
+<% } %>
