@@ -1,0 +1,87 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #000;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Optional starry texture */
+    background-size: cover;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #f3d35f; /* A golden color for titles */
+}
+
+p {
+    text-align: center;
+}
+
+/* Form styles */
+#myForm {
+    background-color: rgba(255, 255, 255, 0.1); /* Translucent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #f3d35f;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+input[type="submit"] {
+    background-color: #f3d35f;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #c2b830; /* Darker shade on hover */
+}
+
+/* Card styles */
+div {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    max-width: 400px;
+}
+
+h2 {
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f3d35f; /* Gold border for the character names */
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    padding: 5px 0;
+}
+
+strong {
+    color: #f3d35f; /* Highlighted text in gold */
+}
